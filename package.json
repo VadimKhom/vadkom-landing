@@ -1,0 +1,25 @@
+{
+  "name": "vadkom-landing",
+  "version": "1.0.0",
+  "description": "This is test project",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-install": "^1.1.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vadkom",
+    "gomel",
+    "belarus"
+  ],
+  "author": "Vadim Khomenkov",
+  "license": "ISC"
+}
