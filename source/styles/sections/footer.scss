@@ -9,4 +9,10 @@ footer {
     text-align: center;
     background: #515151;
   }
+  &__title {
+    margin-bottom: 20px;
+    font-size: 1.8125rem;
+    color: #fff;
+    font-family: $ff-main-bold;
+  }
 }
