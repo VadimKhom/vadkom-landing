@@ -1,4 +1,4 @@
-footer {
+.footer {
   &__top {
     padding: 88px 0 83px;
     text-align: center;
@@ -17,6 +17,7 @@ footer {
     color: #fff;
     font-family: $ff-main-bold;
   }
+
   &__social {
     margin-left: 20px;
     padding: 15px;
@@ -38,13 +39,43 @@ footer {
       color: #fff;
     }
   }
+
   &__text {
     margin-bottom: 30px;
     font-size: 0.875rem;
     color: #cecece;
   }
+
   &__field {
     width: 67%;
     margin: 0 auto 27px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 20px;
+    font-size: 0.875rem;
+    border: 0;
+    color: #cecece;
+    background: #515151;
+  }
+
+  .button {
+    border: 2px solid #515151;
+    padding: 15px 37px;
+    box-sizing: border-box;
+    font-size: 1.0625rem;
+    font-family: $ff-main-bold;
+    background-color: initial;
+    color: #fff;
+
+    &:hover {
+      border: 2px solid #de2b24;
+    }
+  }
+
+  &__copy {
+    font-size: 0.875rem;
+    color: #cecece;
   }
 }
