@@ -1,22 +1,23 @@
-.title{
+.title {
   margin-bottom: 63px;
   text-align: center;
 
-  &__header{
+  &__header {
     margin: 0;
     font-size: 2.25rem;
     font-family: $ff-main-bold;
     line-height: 1;
   }
-  &__text{
+
+  &__text {
     font-size: 1.25rem;
     font-family: $ff-main-light;
   }
 
-  &--with-bottom-line{
+  &--with-bottom-line {
     position: relative;
 
-    &:after{
+    &:after {
       @include centerer-x();
 
       content: '';
@@ -24,7 +25,6 @@
       width: 47px;
       height: 5px;
       background: #424242;
-
     }
   }
 }
