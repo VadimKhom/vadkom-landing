@@ -42,6 +42,7 @@ gulp.task('styles:compile', function () {
 /*------------js-------*/
 gulp.task('js',function () {
     return gulp.src([
+        'source/js/form.js'
         'source/js/main.js'
     ])
         .pipe(sourcemaps.init())
@@ -87,11 +88,12 @@ gulp.task('copy', gulp.parallel('copy:fonts', 'copy:images'));
 gulp.task('watch', function() {
     gulp.watch('source/template/**/*.pug', gulp.series('templates:compile'));
     gulp.watch('source/styles/**/*.scss', gulp.series('styles:compile'));
+    gulp.watch('source/js/**/*.js', gulp.series('js'));
 });
 
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('templates:compile', 'styles:compile', 'sprite', 'copy'),
+    gulp.parallel('templates:compile', 'styles:compile', 'js,' 'sprite', 'copy'),
     gulp.parallel('watch', 'server')
     )
 );
