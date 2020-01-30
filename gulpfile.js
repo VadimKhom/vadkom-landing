@@ -39,6 +39,17 @@ gulp.task('styles:compile', function () {
         .pipe(gulp.dest('build/css'));
 });
 
+/*------------js-------*/
+gulp.task('js',function () {
+    return gulp.src([
+        'source/js/main.js'
+    ])
+        .pipe(sourcemaps.init())
+        .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('build/js'));
+})
 /* ------------ Sprite ------------- */
 gulp.task('sprite', function(cb) {
     const spriteData = gulp.src('source/images/icons/*.png').pipe(spritesmith({
