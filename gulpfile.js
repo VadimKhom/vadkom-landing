@@ -7,26 +7,25 @@ const rimraf = require('rimraf');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
-const sourcemaps = require('gulp-sourcemaps');
+const sourcemaps   = require('gulp-sourcemaps');
 
-
-/*Server*/
+/* -------- Server  -------- */
 gulp.task('server', function() {
     browserSync.init({
         server: {
-            port:9000,
+            port: 9000,
             baseDir: "build"
         }
     });
 
-    gulp.watch('build/**/*').on('change',browserSync.reload);
+    gulp.watch('build/**/*').on('change', browserSync.reload);
 });
 
-/* Pug compile*/
+/* ------------ Pug compile ------------- */
 gulp.task('templates:compile', function buildHTML() {
     return gulp.src('source/template/index.pug')
         .pipe(pug({
-            pretty:true
+            pretty: true
         }))
         .pipe(gulp.dest('build'))
 });
@@ -39,8 +38,8 @@ gulp.task('styles:compile', function () {
         .pipe(gulp.dest('build/css'));
 });
 
-/*------------js-------*/
-gulp.task('js',function () {
+/* --------  js -------- */
+gulp.task('js', function() {
     return gulp.src([
         'source/js/init.js',
         'source/js/validation.js',
@@ -53,7 +52,8 @@ gulp.task('js',function () {
         .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('build/js'));
-})
+});
+
 /* ------------ Sprite ------------- */
 gulp.task('sprite', function(cb) {
     const spriteData = gulp.src('source/images/icons/*.png').pipe(spritesmith({
