@@ -42,7 +42,10 @@ gulp.task('styles:compile', function () {
 /*------------js-------*/
 gulp.task('js',function () {
     return gulp.src([
-        'source/js/form.js'
+        'source/js/init.js',
+        'source/js/validation.js',
+        'source/js/form.js',
+        'source/js/navigation.js',
         'source/js/main.js'
     ])
         .pipe(sourcemaps.init())
@@ -93,7 +96,7 @@ gulp.task('watch', function() {
 
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('templates:compile', 'styles:compile', 'js,' 'sprite', 'copy'),
+    gulp.parallel('templates:compile', 'styles:compile', 'js', 'sprite', 'copy'),
     gulp.parallel('watch', 'server')
     )
 );
