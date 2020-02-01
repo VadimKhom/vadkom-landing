@@ -9,6 +9,8 @@
     me.close=function(){
         form.classList.add('is-hidden');
     };
+
+
     window.form=me;
 
 }());
