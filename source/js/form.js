@@ -20,7 +20,34 @@
         form.classList.add('is-hidden');
     };
 
+    me.isValid=function(){
+        var requiredFields=document.querySelectorAll('[data-valid="required"]');
+        var emailValue=document.querySelector('[data-email]').value;
+        var numberValue=document.querySelector('[data-number]').value;
 
-    window.form=me;
+        if (me.isAllComlited(requiredFields)){
+            console.log('Заполните все необходимые поля');
+            return true;
+        } else if(!ITVDN.validation.isEmail(emailValue)){
+            console.log('Неверный email');
+            return true;
+            } else if(!ITVDN.validation.isNumber(numberValue)){
+            console.log('Неверный номер');
+            return true;
+        }
+        return true;
+    }
+
+    me.isAllComlited=function(data){
+        var result=true;
+
+        for (var i=0;i<data.length;i++){
+            if(!ITVDN.validation.isNotEmpty(data[i].value)){
+                result=false;
+                break
+            }
+        }
+    }
+    ITVDN.form=me;
 
 }());

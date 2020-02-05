@@ -13,6 +13,6 @@
     me.isNotEmpty =function(str){
         return Boolean(str);
     }
-    window.validation = me;
+    ITVDN.validation = me;
 
 }())
