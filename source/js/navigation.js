@@ -15,7 +15,19 @@
     };
 
      function scrollToActiveSection(showedSection){
-        var
+        var section=document.querySelector('.'+showedSection);
+        var coords=section.getBoundingClientRect();
+        var animatedTime=0.4;
+
+        var timerId = setInterval(function () {
+            if (document.body.scrollTop < coords.top){
+                window.scrollBy(0,10);
+            }else{
+                clearInterval(timerId);
+            }
+        },animatedTime || 0.5)
+
+        console.log(coords);
      }
     ITVDN.navigation=me;
 }());
