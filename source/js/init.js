@@ -1,1 +1,1 @@
-window.ITVDN={};
+window.ITVDN = {};
